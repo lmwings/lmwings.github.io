@@ -1,0 +1,1361 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="使用TravisCI持续集成, 个人博客，柠檬之翼，笔记，文章">
+    <meta name="description" content="使用Travis CI持续集成1. 说明github可以和Travis CI一起使用，这样可以达到持续集成的目的，可以理解为当有内容提交到仓库，就可以按规则触发持续集成命令，这个命令包含环境配置，编译，允许测试，结果生成等等。现在有一个契机">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>使用TravisCI持续集成 | 嘟嘟嘴的窝</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="嘟嘟嘴的窝" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">嘟嘟嘴的窝</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">嘟嘟嘴的窝</div>
+        <div class="logo-desc">
+            
+            分享个人学习笔记，记录生活
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">使用TravisCI持续集成</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/github/">
+                                <span class="chip bg-color">github</span>
+                            </a>
+                        
+                            <a href="/tags/coding/">
+                                <span class="chip bg-color">coding</span>
+                            </a>
+                        
+                            <a href="/tags/TravisCI/">
+                                <span class="chip bg-color">TravisCI</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+                                <span class="chip bg-color">持续集成</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" class="post-category">
+                                技术文章
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-06
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="使用Travis-CI持续集成"><a href="#使用Travis-CI持续集成" class="headerlink" title="使用Travis CI持续集成"></a>使用<code>Travis CI</code>持续集成</h1><h2 id="1-说明"><a href="#1-说明" class="headerlink" title="1. 说明"></a>1. 说明</h2><p><code>github</code>可以和<code>Travis CI</code>一起使用，这样可以达到持续集成的目的，可以理解为当有内容提交到仓库，就可以按规则触发持续集成命令，这个命令包含环境配置，编译，允许测试，结果生成等等。现在有一个契机学习它，就是我已经在<code>github</code>上部署了是<code>hexo</code>静态网站，有一个缺点就是，每次都需要在本地电脑的源码目录下，执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>, 这样才能发布到<code>pages</code>页面上，能不能把源码也上传到仓库？最好是私有仓库，然后我只要先这个仓库递交内容，后台通过<code>Travis CI</code>自动编译发布<code>hexo网站</code>， 这样可以不受电脑约束，只要能提交到这个源码参考，都可以自动部署。这里做一下笔记记录，也当是对<code>Travis CI</code>的学习。</p>
+<p>还有其他的一些持续集成平台<code>https://hexo.io/zh-cn/docs/one-command-deployment</code></p>
+<p><code>2023.3.12</code>切换到[[2023-03-11-迁移到Github-Action]]</p>
+<p><strong>明确需求</strong></p>
+<p>通过<code>Travis CI</code>，当源码目录有文件提交时候，可以自动部署完整到<code>github</code>/<code>coding</code>上。</p>
+<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h2><p><strong><code>github</code>上使用</strong></p>
+<p>关于<code>travis-ci</code>的使用，官方文档是<code>https://docs.travis-ci.com/user/tutorial/</code>，使用之前可以大概看下，这个是最标准的使用教程。</p>
+<ol>
+<li><p>在<code>github</code>上新建一个仓库，我这里先创建私有仓库，也可以直接在博客发布的参考新建一个分支，效果是一样的。</p>
+<p>我命名为<code>hexo-source</code>, 私有地址为<code>https://github.com/lmwings/hexo-source</code></p>
+</li>
+<li><p>把本地的<code>hexo代码</code>上传到仓库</p>
+<pre class=" language-shell"><code class="language-shell"># 先拉一份仓库内容
+git clone https://github.com/lmwings/hexo-source.git
+
+# 把hexo源码都拷贝到 hexo-source这个目录下hexo-source, 然后提交
+cd hexo-source
+git add . # '.'号表示添加该目录下所有待提交文件到追踪区
+git commit -m "add hexo source code"
+git push </code></pre>
+<p>这个遇到一个问题，就是主题文件夹<code>matery</code>, 上传以后是灰色的，然后<code>git clone</code>下来也是为空，原因是这个主题是来着其他<code>git 仓库</code>，只要删除掉里面的<code>.git/.gitignore</code>, 再重新<code>add/commit/push</code>即可</p>
+</li>
+<li><p>到<code>travis-ci</code>登录</p>
+<p>网址<code>https://travis-ci.com/</code>, 只允许使用<code>github账号登录</code></p>
+<p>这里先登录。</p>
+</li>
+<li><p>到<code>github</code>中产生<code>personal access token</code></p>
+<p>由于<code>travis-ci</code>需要操作<code>github仓库</code>, 无论使用<code>ssh</code>还是<code>https</code> 都需要告诉密码，这个不太合理，所以通过<code>personal access token</code>方式来进行授权。</p>
+<p>（1）选择<code>setting—&gt;Developer setting-&gt;Personal access token-&gt;Generate new token</code>,</p>
+<p>然后打开需要授权的功能即可，把握原则，授权应该满足最小原则，能少就少，使用我这里只有把仓库相关权限授权，即只勾选<code>repo</code></p>
+<p>（2）点击<code>Generato token</code>后会生成<code>Access Token</code>，<strong>注意， 这个需要马上复制拷贝出来，刷新了就没了，需要重新生成了</strong>。</p>
+<p>（3）生成了这个<code>Access Token</code>后，其实就是可以通过这个码来访问了。</p>
+<p>访问规则是<code>https://{Access_Token}@github.com/owner/repo.git</code></p>
+<pre class=" language-shell"><code class="language-shell"># 没设置之前可以通过这个clone，如果需要提交代码需要输入账号和密码。git和ssh都是，ssh可以使用公钥免密
+git clone https://github.com/lmwings/hexo-source.git
+
+# 设置以后（其中数字就是我的access 伪造的，哈哈）
+git clone https://22269a5ff52a48193045f9c883c00d7a9fdd325@github.com/lmwings/lmwings.github.io.git</code></pre>
+<p>^b293ba</p>
+</li>
+<li><p>添加<code>Token</code></p>
+<p>回到<code>travis-ci</code>，选择<code>hexo-source</code>这个源代码仓库, 添加环境变量<code>GIT_REPO_TOKEN</code>， 值就是刚才复制出来的<code>Access Token</code>, 并记得设置<code>DISplay Value in build log</code>不要勾选，勾选了就等于公开了<code>token</code>, 最后点击<code>ADD</code>就完成了设置。</p>
+<p>我们执行脚本时候，就可以使用<code>$GIT_REPO_TOKEN</code>来访问<code>token</code>,</p>
+<p>设置<code>Cron Jobs</code>的分支为<code>master</code>，因为我就单独放在主线上面。</p>
+</li>
+<li><p>需要在代码中添加<code>.travis.yml</code>文件，具体内如如下，然后推送到参考</p>
+<p><strong><code>.travis.yml</code></strong></p>
+<p>里面的字段以及简单教程可以参考<code>https://michael728.github.io/2019/06/16/cicd-hexo-blog-travis/</code></p>
+<p>这个要注意格式是否正确，需要使用<code>yaml语法</code>, 可以通过在线检测工具看看是否格式有问题</p>
+<p><code>http://nodeca.github.io/js-yaml/</code></p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">sudo</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">language</span><span class="token punctuation">:</span> node_js
+
+<span class="token comment" spellcheck="true"># 指定NodeJS的版本</span>
+<span class="token key atrule">node_js</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token number">12 </span><span class="token comment" spellcheck="true"># use nodejs v12 LTS</span>
+<span class="token key atrule">cache</span><span class="token punctuation">:</span> npm
+
+<span class="token comment" spellcheck="true"># 指定要构建的分支</span>
+<span class="token key atrule">branches</span><span class="token punctuation">:</span>
+  <span class="token key atrule">only</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> master <span class="token comment" spellcheck="true"># build master branch only</span>
+
+<span class="token comment" spellcheck="true"># 在安装项目环境阶段需要运行的命令，其中travis_env_init.sh是自己编写的</span>
+<span class="token key atrule">install</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> source travis_env_init.sh
+
+<span class="token comment" spellcheck="true"># 在构建阶级需要允许的命令  </span>
+<span class="token key atrule">script</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> hexo clean
+  <span class="token punctuation">-</span> hexo generate <span class="token comment" spellcheck="true"># generate static files</span>
+
+<span class="token comment" spellcheck="true"># 在构建成功后要允许的命令，构建事吧不会执行 </span>
+<span class="token key atrule">after_success</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> hexo deploy <span class="token punctuation">></span> /dev/null <span class="token comment" spellcheck="true"># 通过 hexo的 deploy 命令部署博客</span>
+
+<span class="token comment" spellcheck="true"># 设置通知项</span>
+<span class="token key atrule">notifications</span><span class="token punctuation">:</span>
+  email<span class="token punctuation">:</span><span class="token boolean important">true</span>
+
+<span class="token comment" spellcheck="true">#deploy:</span>
+<span class="token comment" spellcheck="true">#  provider: pages</span>
+<span class="token comment" spellcheck="true">#  skip-cleanup: true</span>
+<span class="token comment" spellcheck="true">#  github-token: $GIT_REPO_TOKEN</span>
+<span class="token comment" spellcheck="true">#  keep-history: true</span>
+<span class="token comment" spellcheck="true">#  on:</span>
+<span class="token comment" spellcheck="true">#    branch: master</span>
+<span class="token comment" spellcheck="true">#  local-dir: public</span></code></pre>
+<p>这里有一个<code>travis_env_init.sh</code>主要是为了把复杂的命令都统一在一起。</p>
+<p><strong><code>travis_env_init.sh</code></strong></p>
+<pre class=" language-shell"><code class="language-shell"># travis_env_inti.sh
+
+# 全局安装 HEXO
+npm install -g hexo
+
+# 全局安装 HEXO 命令行工具
+npm install -g hexo-cli
+
+# 安装 package.json中的依赖
+npm install
+
+# 使用hexo d 需要用到
+npm install hexo-deployer-git --save
+
+# 安装一些使用到的插件
+npm i -S hexo-prism-plugin
+npm install hexo-generator-search --save
+npm i hexo-permalink-pyinyin --save
+npm i --save hexo-wordcount
+npm install hexo-filter-github-emojis --save
+npm install hexo-generator-feed --save
+
+# 为了不需要输入和公开密码，我们使用了token的方式，本身需要把_config.yml中修改为带token的地址
+# 这里为了方便，使用了脚本来替换。
+
+#sed -i "s~git@github.com:~https://s~git@github.com:~https://${GIT_REPO_TOKEN}@github.com/~" _config.yml
+
+sed -i "s/    github: https:\/\/github.com/    github: https:\/\/${GIT_REPO_TOKEN}@github.com/g" _config.yml</code></pre>
+</li>
+<li><p>提交代码到仓库，理论上应该就会自动<code>ci</code></p>
+<pre class=" language-shell"><code class="language-shell">git add .travis.yml travis_env_init.sh
+git commit -m "add travis.yml"
+git push</code></pre>
+</li>
+<li><p>可以到<code>travis-ci</code>查看具体的<code>Job log</code></p>
+<p>我这里是<code>https://travis-ci.com/lmwings/hexo-source</code></p>
+<p>选择 <code>Current</code>查看</p>
+</li>
+</ol>
+<p><strong><code>coding</code>上使用</strong></p>
+<p><code>travis ci</code>是不能用<code>coding</code>关联使用的，但是如果我们<code>hexo</code>配置文件中<code>deploy</code>中配置了<code>coding</code>，也可以在上面那个基础上，顺便让<code>travis ci</code>把编译好的代码上传到我们部署好的<code>coding仓库中</code>。为了不输入和暴露密码，使用方式也采用 <strong>访问令牌</strong> 的方式。</p>
+<ol>
+<li><p>到<code>coding</code>上生成访问令牌</p>
+<p><code>https://lmwings.coding.net/user/account/setting/tokens/new</code>, 选择 <code>project:depot</code>，然后点击c创建令牌即可。</p>
+</li>
+<li><p>先本地验证下能不能使用访问令牌访问</p>
+<p>按照官方教程<code>[https://open.coding.net/personal-access-token/#%E4%BD%BF%E7%94%A8%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C](https://open.coding.net/personal-access-token/#使用访问令牌)</code>, 访问规则是</p>
+<pre class=" language-shell"><code class="language-shell">git clone https://testuser:90ed7a169febb12d17e14aa5531827476f6b3a4e@test.coding.net/test/testRepo.git</code></pre>
+<p>这里有一个很坑的地方，就是用户名，我的一直是<code>lmwings</code>，但是不成功。</p>
+<p>后来仔细查看了下，发现是系统升级了，<code>coding</code>和<code>腾讯开发者平台</code>合并了，所以登录用户名只允许使用邮箱或者手机号! 就是<strong><code>testuser</code>要写<code>手机号</code></strong></p>
+<pre class=" language-shell"><code class="language-shell"># 为了保密，下面手机号和密钥是伪造的，要替换成自己的！！！
+git clone https://13500000000:4400de0972000013fc6c000a5309a6@e.coding.net/lmwings/lmwings.git</code></pre>
+</li>
+<li><p>把上面的<code>token</code>添加到<code>travis ci</code>中</p>
+<p>和之前<code>github</code>的步骤一样，这里主要是添加一个环境变量，<code>CODING_REPO_TOKEN</code>，值填写为刚才申请到的<code>token</code>. 为了不把手机号也暴露出去，我这里把手机号也设置成环境变量.<code>CODING_USER_NAME</code>，值填写自己的<code>coding</code>账号的手机号</p>
+</li>
+<li><p>修改<code>travis_env_init.sh</code></p>
+<p>主要是添加替换<code>token</code>访问的脚本，这样<code>travis ci</code>拉下来以后就可以不需要密码，进行<code>hexo d</code>上传部署到<code>coding</code> 上了</p>
+<pre class=" language-shell"><code class="language-shell"># 增加下面这句
+sed -i "s/    coding: https:\/\/e.coding.net/    coding: https:\/\/${CODING_USER_NAME}:${CODING_REPO_TOKEN}@e.coding.net/g" _config.yml</code></pre>
+</li>
+<li><p>提交到代码到仓库</p>
+<pre class=" language-shell"><code class="language-shell">git add travis_env_init.sh
+git status
+git commit -m "add travisci hexo deploy to coding"
+git push</code></pre>
+</li>
+<li><p>到<code>travis ci</code>中查看日志</p>
+<p><code>https://travis-ci.com/lmwings/hexo-source</code></p>
+<p>另外，如果<code>coding pages</code>设置了检测到更新就自动部署的话，也可以在<code>静态网站</code>上看到自动部署了。</p>
+</li>
+</ol>
+<p><strong><code>gitee</code>上使用</strong></p>
+<p>这个和<code>coding</code>上一样，主要是为了推送而已，</p>
+<p>但是缺点是，免费的<code>gitee pages</code>服务，不支持自动检测更新，需要手动更新，所以这个只是提交一下代码而已。</p>
+<ol>
+<li><p>到<code>gitee</code>私人令牌申请界面，申请令牌</p>
+<p><code>https://gitee.com/personal_access_tokens</code></p>
+</li>
+<li><p>本地验证下通过令牌是否能进行访问</p>
+<p>访问规则和<code>github</code>是一样的</p>
+<pre class=" language-shell"><code class="language-shell"> git clone https://ae1cs94d1s6bf3ddds5f8f37328@gitee.com/lmwings/lmwings.git</code></pre>
+</li>
+<li><p>把上面的<code>token</code>添加到<code>travis ci</code>中</p>
+<p>设置环境变量<code>GITEE_REPO_TOKEN</code></p>
+</li>
+<li><p>修改<code>travis_env_init.sh</code></p>
+<pre class=" language-shell"><code class="language-shell"># 增加下面这句
+sed -i "s/    gitee: https:\/\/gitee.com/    gitee: https:\/\/${GITEE_REPO_TOKEN}@gitee.com/g" _config.yml</code></pre>
+</li>
+<li><p>提交到代码到仓库</p>
+</li>
+<li><p>测试验证，然后手动更新下<code>pages</code></p>
+<p>（<strong>发现实际使用中，失败了。但是使用token方式是可以clone的，在travisci里面就不行。不继续研究了，反正这个还需要手动更新博客，太麻烦了</strong>）</p>
+</li>
+<li></li>
+</ol>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.lmwings.top" rel="external nofollow noreferrer">Wang Kang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.lmwings.top/shi-yong-travisci-chi-xu-ji-cheng.html">http://www.lmwings.top/shi-yong-travisci-chi-xu-ji-cheng.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.lmwings.top" target="_blank">Wang Kang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/github/">
+                                    <span class="chip bg-color">github</span>
+                                </a>
+                            
+                                <a href="/tags/coding/">
+                                    <span class="chip bg-color">coding</span>
+                                </a>
+                            
+                                <a href="/tags/TravisCI/">
+                                    <span class="chip bg-color">TravisCI</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+                                    <span class="chip bg-color">持续集成</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '0123e9f950656f3c89b6',
+        clientSecret: '7ed5378272d9a12cf3be09c4cde0d24015b200b1',
+        repo: 'lmwings.github.io',
+        owner: 'lmwings',
+        admin: "lmwings",
+        id: '2020-02-06T09-50-36',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/hexo-chang-yong-ming-ling.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="hexo常用命令">
+                        
+                        <span class="card-title">hexo常用命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            hexo常用命令1. 初始化   hexo init  【新建一个网站，如果没有设置文件夹，会在当前目录下创建】
+2. 新建文章   hexo new post 文章名
+   注意：1.如果标题有空格，注意添加引号"文章名". 2. 会在s
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="post-category">
+                                    网站建设
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/hexo%E5%91%BD%E4%BB%A4/">
+                        <span class="chip bg-color">hexo命令</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/tian-jia-zi-ji-de-yu-ming-jie-xi.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="添加自己的域名解析">
+                        
+                        <span class="card-title">添加自己的域名解析</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            添加解析自己的域名1. 准备先申请一个域名，我选择在阿里云平台上注册，这里为了使用，就选了最便宜的top域名。
+这些教程都很清晰，按部就班做就好，我申请到的域名为lmwings.top。
+但是现在还不能直接访问，怎么样才能把域名和我们的网站
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" class="post-category">
+                                    技术文章
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9F%9F%E5%90%8D/">
+                        <span class="chip bg-color">域名</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%A7%A3%E6%9E%90/">
+                        <span class="chip bg-color">解析</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">
+                        <span class="chip bg-color">域名解析</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 嘟嘟嘴的窝<br />'
+            + '文章作者: 柠檬之翼<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://www.lmwings.top" target="_blank">柠檬之翼</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">36.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lmwings" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1321559220@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1321559220" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1321559220" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?6fdfb99af350f72ffa28464cc4abaa04";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

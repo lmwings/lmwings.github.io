@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>嘟嘟嘴的窝</title>
+  
+  <subtitle>柠檬之翼</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.lmwings.top/"/>
+  <updated>2026-01-18T15:28:54.306Z</updated>
+  <id>http://www.lmwings.top/</id>
+  
+  <author>
+    <name>柠檬之翼</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2025年总结</title>
+    <link href="http://www.lmwings.top/2025-nian-zong-jie.html"/>
+    <id>http://www.lmwings.top/2025-nian-zong-jie.html</id>
+    <published>2026-01-18T13:48:32.000Z</published>
+    <updated>2026-01-18T15:28:54.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;2025年年度总结&quot;&gt;&lt;a href=&quot;#2025年年度总结&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="个人随笔" scheme="http://www.lmwings.top/categories/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="年度总结" scheme="http://www.lmwings.top/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2024年总结</title>
+    <link href="http://www.lmwings.top/2024-nian-zong-jie.html"/>
+    <id>http://www.lmwings.top/2024-nian-zong-jie.html</id>
+    <published>2025-02-15T22:55:21.000Z</published>
+    <updated>2026-01-18T15:28:54.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;2024年年度总结&quot;&gt;&lt;a href=&quot;#2024年年度总结&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="个人随笔" scheme="http://www.lmwings.top/categories/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="年度总结" scheme="http://www.lmwings.top/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客访问异常问题</title>
+    <link href="http://www.lmwings.top/bo-ke-fang-wen-yi-chang-wen-ti.html"/>
+    <id>http://www.lmwings.top/bo-ke-fang-wen-yi-chang-wen-ti.html</id>
+    <published>2024-02-08T07:11:29.000Z</published>
+    <updated>2026-01-18T15:28:54.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;个人博客访问异常问题&quot;&gt;&lt;a href=&quot;#个人博客访问异常问题&quot; class=&quot;headerlink&quot; title=&quot;个人博客访问异常问题&quot;&gt;&lt;/a&gt;个人博客访问异常问题&lt;/h1&gt;&lt;p&gt;[[202402081311]]&lt;/p&gt;
+&lt;h2 id=&quot;问题汇总&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="运营维护" scheme="http://www.lmwings.top/categories/%E8%BF%90%E8%90%A5%E7%BB%B4%E6%8A%A4/"/>
+    
+    
+      <category term="github" scheme="http://www.lmwings.top/tags/github/"/>
+    
+      <category term="博客" scheme="http://www.lmwings.top/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>玩客云刷Armbian系统</title>
+    <link href="http://www.lmwings.top/wan-ke-yun-shua-armbian-xi-tong.html"/>
+    <id>http://www.lmwings.top/wan-ke-yun-shua-armbian-xi-tong.html</id>
+    <published>2024-02-07T04:36:07.000Z</published>
+    <updated>2026-01-18T15:28:54.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;玩客云刷Armbian系统&quot;&gt;&lt;a href=&quot;#玩客云刷Armbian系统&quot; class=&quot;headerlink&quot; title=&quot;玩客云刷Armbian系统&quot;&gt;&lt;/a&gt;玩客云刷Armbian系统&lt;/h1&gt;&lt;h2 id=&quot;刷系统&quot;&gt;&lt;a href=&quot;#刷系统&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术文章" scheme="http://www.lmwings.top/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="docker" scheme="http://www.lmwings.top/tags/docker/"/>
+    
+      <category term="玩客云" scheme="http://www.lmwings.top/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/"/>
+    
+      <category term="Armbian" scheme="http://www.lmwings.top/tags/Armbian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2023年总结</title>
+    <link href="http://www.lmwings.top/2023-nian-zong-jie.html"/>
+    <id>http://www.lmwings.top/2023-nian-zong-jie.html</id>
+    <published>2024-01-20T03:39:02.000Z</published>
+    <updated>2026-01-18T15:28:54.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;2023年度总结&quot;&gt;&lt;a href=&quot;#2023年度总结&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="个人随笔" scheme="http://www.lmwings.top/categories/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="年度总结" scheme="http://www.lmwings.top/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>coding上部署静态页面</title>
+    <link href="http://www.lmwings.top/coding-shang-bu-shu-jing-tai-ye-mian.html"/>
+    <id>http://www.lmwings.top/coding-shang-bu-shu-jing-tai-ye-mian.html</id>
+    <published>2023-03-12T08:14:01.000Z</published>
+    <updated>2026-01-18T15:28:54.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;coding上部署静态页面&quot;&gt;&lt;a href=&quot;#coding上部署静态页面&quot; class=&quot;headerlink&quot; title=&quot;coding上部署静态页面&quot;&gt;&lt;/a&gt;&lt;code&gt;coding&lt;/code&gt;上部署静态页面&lt;/h1&gt;&lt;p&gt;官方教程：&lt;br&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="网站建设" scheme="http://www.lmwings.top/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+      <category term="hexo" scheme="http://www.lmwings.top/tags/hexo/"/>
+    
+      <category term="coding" scheme="http://www.lmwings.top/tags/coding/"/>
+    
+      <category term="网站部署" scheme="http://www.lmwings.top/tags/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>迁移到Github Action</title>
+    <link href="http://www.lmwings.top/qian-yi-dao-github-action.html"/>
+    <id>http://www.lmwings.top/qian-yi-dao-github-action.html</id>
+    <published>2023-03-11T11:39:09.000Z</published>
+    <updated>2026-01-18T15:28:54.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;迁移到-Github-Action&quot;&gt;&lt;a href=&quot;#迁移到-Github-Action&quot; class=&quot;headerlink&quot; title=&quot;迁移到``Github-Action&quot;&gt;&lt;/a&gt;迁移到``Github-Action&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术文章" scheme="http://www.lmwings.top/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="github" scheme="http://www.lmwings.top/tags/github/"/>
+    
+      <category term="action" scheme="http://www.lmwings.top/tags/action/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chatGPT注册和使用</title>
+    <link href="http://www.lmwings.top/chatgpt-zhu-ce-he-shi-yong.html"/>
+    <id>http://www.lmwings.top/chatgpt-zhu-ce-he-shi-yong.html</id>
+    <published>2023-02-08T12:37:31.000Z</published>
+    <updated>2026-01-18T15:28:54.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;chatGPT注册和使用&quot;&gt;&lt;a href=&quot;#chatGPT注册和使用&quot; class=&quot;headerlink&quot; title=&quot;chatGPT注册和使用&quot;&gt;&lt;/a&gt;chatGPT注册和使用&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具推荐" scheme="http://www.lmwings.top/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"/>
+    
+    
+      <category term="openai" scheme="http://www.lmwings.top/tags/openai/"/>
+    
+      <category term="chatGPT" scheme="http://www.lmwings.top/tags/chatGPT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022年总结</title>
+    <link href="http://www.lmwings.top/2022-nian-zong-jie.html"/>
+    <id>http://www.lmwings.top/2022-nian-zong-jie.html</id>
+    <published>2023-02-08T12:35:47.000Z</published>
+    <updated>2026-01-18T15:28:54.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;2022年度总结&quot;&gt;&lt;a href=&quot;#2022年度总结&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="个人随笔" scheme="http://www.lmwings.top/categories/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="年度总结" scheme="http://www.lmwings.top/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vscode调试开发</title>
+    <link href="http://www.lmwings.top/vscode-diao-shi-kai-fa.html"/>
+    <id>http://www.lmwings.top/vscode-diao-shi-kai-fa.html</id>
+    <published>2022-04-16T09:35:01.000Z</published>
+    <updated>2026-01-18T15:28:54.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;vscode开发环境&quot;&gt;&lt;a href=&quot;#vscode开发环境&quot; class=&quot;headerlink&quot; title=&quot;vscode开发环境&quot;&gt;&lt;/a&gt;&lt;code&gt;vscode&lt;/code&gt;开发环境&lt;/h1&gt;&lt;h2 id=&quot;说明&quot;&gt;&lt;a href=&quot;#说明&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术文章" scheme="http://www.lmwings.top/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="vscode" scheme="http://www.lmwings.top/tags/vscode/"/>
+    
+      <category term="tools" scheme="http://www.lmwings.top/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim使用</title>
+    <link href="http://www.lmwings.top/vim-shi-yong.html"/>
+    <id>http://www.lmwings.top/vim-shi-yong.html</id>
+    <published>2022-04-15T13:50:13.000Z</published>
+    <updated>2026-01-18T15:28:54.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;vim使用&quot;&gt;&lt;a href=&quot;#vim使用&quot; class=&quot;headerlink&quot; title=&quot;vim使用&quot;&gt;&lt;/a&gt;&lt;code&gt;vim&lt;/code&gt;使用&lt;/h1&gt;&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术文章" scheme="http://www.lmwings.top/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="vim" scheme="http://www.lmwings.top/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>picGo和gitee搭建网络图传</title>
+    <link href="http://www.lmwings.top/picgo-he-gitee-da-jian-wang-luo-tu-chuan.html"/>
+    <id>http://www.lmwings.top/picgo-he-gitee-da-jian-wang-luo-tu-chuan.html</id>
+    <published>2022-03-26T11:59:08.000Z</published>
+    <updated>2026-01-18T15:28:54.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+      <category term="运营维护" scheme="http://www.lmwings.top/categories/%E8%BF%90%E8%90%A5%E7%BB%B4%E6%8A%A4/"/>
+    
+    
+      <category term="图床" scheme="http://www.lmwings.top/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+      <category term="picGo" scheme="http://www.lmwings.top/tags/picGo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github提交失败</title>
+    <link href="http://www.lmwings.top/github-ti-jiao-shi-bai.html"/>
+    <id>http://www.lmwings.top/github-ti-jiao-shi-bai.html</id>
+    <published>2022-02-14T15:33:29.000Z</published>
+    <updated>2026-01-18T15:28:54.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;github提交失败问题处理&quot;&gt;&lt;a href=&quot;#github提交失败问题处理&quot; class=&quot;headerlink&quot; title=&quot;github提交失败问题处理&quot;&gt;&lt;/a&gt;&lt;code&gt;github&lt;/code&gt;提交失败问题处理&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="运营维护" scheme="http://www.lmwings.top/categories/%E8%BF%90%E8%90%A5%E7%BB%B4%E6%8A%A4/"/>
+    
+    
+      <category term="github" scheme="http://www.lmwings.top/tags/github/"/>
+    
+      <category term="git" scheme="http://www.lmwings.top/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Obsidian笔记使用</title>
+    <link href="http://www.lmwings.top/obsidian-bi-ji-shi-yong.html"/>
+    <id>http://www.lmwings.top/obsidian-bi-ji-shi-yong.html</id>
+    <published>2022-02-13T05:39:08.000Z</published>
+    <updated>2026-01-18T15:28:54.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;Obsidian笔记软件使用指南&quot;&gt;&lt;a href=&quot;#Obsidian笔记软件使用指南&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="http://www.lmwings.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Obsidian" scheme="http://www.lmwings.top/tags/Obsidian/"/>
+    
+      <category term="知识管理" scheme="http://www.lmwings.top/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="笔记软件" scheme="http://www.lmwings.top/tags/%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2021年总结</title>
+    <link href="http://www.lmwings.top/2021-nian-zong-jie.html"/>
+    <id>http://www.lmwings.top/2021-nian-zong-jie.html</id>
+    <published>2022-01-28T06:18:18.000Z</published>
+    <updated>2026-01-18T15:28:54.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;2021年度总结&quot;&gt;&lt;a href=&quot;#2021年度总结&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="个人随笔" scheme="http://www.lmwings.top/categories/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="年度总结" scheme="http://www.lmwings.top/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>注册自己的公司</title>
+    <link href="http://www.lmwings.top/zhu-ce-zi-ji-de-gong-si.html"/>
+    <id>http://www.lmwings.top/zhu-ce-zi-ji-de-gong-si.html</id>
+    <published>2021-03-03T11:59:52.000Z</published>
+    <updated>2026-01-18T15:28:54.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;注册自己的公司&quot;&gt;&lt;a href=&quot;#注册自己的公司&quot; class=&quot;headerlink&quot; title=&quot;注册自己的公司&quot;&gt;&lt;/a&gt;注册自己的公司&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="跨境电商" scheme="http://www.lmwings.top/categories/%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86/"/>
+    
+    
+      <category term="注册公司" scheme="http://www.lmwings.top/tags/%E6%B3%A8%E5%86%8C%E5%85%AC%E5%8F%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo插入图片无法显示问题</title>
+    <link href="http://www.lmwings.top/hexo-cha-ru-tu-pian-wu-fa-xian-shi-wen-ti.html"/>
+    <id>http://www.lmwings.top/hexo-cha-ru-tu-pian-wu-fa-xian-shi-wen-ti.html</id>
+    <published>2021-02-09T07:56:32.000Z</published>
+    <updated>2026-01-18T15:28:54.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;hexo文章中插入图片无法正常显示&quot;&gt;&lt;a href=&quot;#hexo文章中插入图片无法正常显示&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="网站建设" scheme="http://www.lmwings.top/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+      <category term="hexo" scheme="http://www.lmwings.top/tags/hexo/"/>
+    
+      <category term="图片显示" scheme="http://www.lmwings.top/tags/%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>亚马逊套利模式</title>
+    <link href="http://www.lmwings.top/ya-ma-xun-tao-li-mo-shi.html"/>
+    <id>http://www.lmwings.top/ya-ma-xun-tao-li-mo-shi.html</id>
+    <published>2021-02-09T05:21:45.000Z</published>
+    <updated>2026-01-18T15:28:54.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;亚马逊套利模式&quot;&gt;&lt;a href=&quot;#亚马逊套利模式&quot; class=&quot;headerlink&quot; title=&quot;亚马逊套利模式&quot;&gt;&lt;/a&gt;亚马逊套利模式&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="跨境电商" scheme="http://www.lmwings.top/categories/%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86/"/>
+    
+    
+      <category term="套利模式" scheme="http://www.lmwings.top/tags/%E5%A5%97%E5%88%A9%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="亚马逊" scheme="http://www.lmwings.top/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A/"/>
+    
+      <category term="跨境电商" scheme="http://www.lmwings.top/tags/%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020年总结</title>
+    <link href="http://www.lmwings.top/2020-nian-zong-jie.html"/>
+    <id>http://www.lmwings.top/2020-nian-zong-jie.html</id>
+    <published>2021-01-16T11:16:37.000Z</published>
+    <updated>2026-01-18T15:28:54.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;2020年度总结&quot;&gt;&lt;a href=&quot;#2020年度总结&quot; class=&quot;headerlink&quot; title=&quot;2020年度总结&quot;&gt;&lt;/a&gt;2020年度总结&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="个人随笔" scheme="http://www.lmwings.top/categories/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="年度总结" scheme="http://www.lmwings.top/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gitlab/gitlab-runner离线环境部署</title>
+    <link href="http://www.lmwings.top/gitlab-gitlab-runner-chi-xian-huan-jing-bu-shu.html"/>
+    <id>http://www.lmwings.top/gitlab-gitlab-runner-chi-xian-huan-jing-bu-shu.html</id>
+    <published>2020-02-22T10:52:23.000Z</published>
+    <updated>2026-01-18T15:28:54.304Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;gitlab-gitlab-runner离线环境部署&quot;&gt;&lt;a href=&quot;#gitlab-gitlab-runner离线环境部署&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术文章" scheme="http://www.lmwings.top/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="持续集成" scheme="http://www.lmwings.top/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+    
+      <category term="gitlab" scheme="http://www.lmwings.top/tags/gitlab/"/>
+    
+      <category term="gitlab-runner" scheme="http://www.lmwings.top/tags/gitlab-runner/"/>
+    
+  </entry>
+  
+</feed>

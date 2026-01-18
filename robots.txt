@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/
+Allow: /contact/
+Allow: /friends/
+
+Sitemap: https://www.lmwings.top/sitemap.xml
+Sitemap: https://www.lmwings.top/baidu_sitemap.xml
